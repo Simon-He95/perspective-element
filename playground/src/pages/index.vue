@@ -1,33 +1,52 @@
 <script setup lang="ts">
-import { perspectiveElementMove } from '../../../src'
-
+import { preload } from 'simon-js-tool'
+import { perspectiveElementMove, perspectiveElementRotate } from '../../../src'
+preload(
+  ['https://images.pexels.com/photos/1097491/pexels-photo-1097491.jpeg'],
+  '',
+)
 perspectiveElementMove('.parent', [
   {
     image: '.a-img1',
-    speed: 0.5,
-  },
-  {
-    image: '.a-img2',
     speed: 0.3,
   },
   {
-    image: '.a-img3',
-    speed: 0.9,
+    image: '.image-1',
+    speed: 0.6,
   },
 ])
+perspectiveElementRotate('.image-2')
 </script>
 
 <template>
   <div class="parent" relative overflow="hidden">
-    <div class="a-img1" absolute left-0 top-0 w-full pointer-events-none>
-      2
-    </div>
-    <div class="a-img2" absolute left-50 top-0 z-2 w-100 pointer-events-none>
+    <div class="a-img1" absolute left-0 top-0 w-full pointer-events-none />
+    <!-- <div class="a-img2" absolute left-50 top-0 z-2 w-100 pointer-events-none>
       4
     </div>
     <div class="a-img3" absolute left-100 top-0 z-1 w-100 pointer-events-none>
       6
-    </div>
+    </div> -->
+    <img
+      src="/1.png"
+      class="image-1"
+      absolute
+      left-50
+      bottom-10
+      z-2
+      w-100
+      alt=""
+    >
+    <img
+      src="/2.png"
+      class="image-2"
+      absolute
+      left-200
+      bottom-10
+      z-1
+      w-50
+      alt=""
+    >
   </div>
 </template>
 

@@ -3,9 +3,9 @@ interface PerspectiveMoveOption {
   image: HTMLImageElement | string
   speed: number
 }
-export function perspectiveElementMove(el: string | HTMLElement, options: PerspectiveMoveOption[] = []): () => void {
-  return addEventListener(el, 'mousemove', (e) => {
-    const el = e.target as HTMLElement
+export function perspectiveElementMove(container: string | HTMLElement, options: PerspectiveMoveOption[] = []): () => void {
+  return addEventListener(container, 'mousemove', (e) => {
+    const el = (isStr(container) ? document.querySelector(container) : container) as HTMLElement
     const x = el.offsetLeft
     const y = el.offsetTop
     const mousex = e.clientX - x
@@ -17,12 +17,11 @@ export function perspectiveElementMove(el: string | HTMLElement, options: Perspe
     options.forEach((option) => {
       const { image: _image, speed } = option
       let image = _image
-
       if (isStr(image))
         image = document.querySelector(image) as HTMLImageElement
       if (!image)
         throw new Error(`${image} element is not found`)
-      image.style.transform = `translate(${speedX * speed}px, ${speedY * speed}px)`
+      image.style.transform = `translate3d(${speedX * speed}px, ${speedY * speed}px,0px)`
     })
   })
 }

@@ -13,13 +13,11 @@ export function perspectiveElementRotate(container: HTMLImageElement | string, f
     const X = (mouseX - w / 2) / w / 100
     const Y = (h / 2 - mouseY) / h / 100
     el.style.transform = `perspective(300px) rotateY(${X * frequency}deg) rotateX(${Y * frequency}deg)`
-    el.style.boxShadow = `${-X / 20}px ${Y / 20}px 50px rgba(0, 0, 0, 0.3)`
   })
 
   const stopLeave = addEventListener(container, 'mouseleave', (e) => {
     const el = e.target as HTMLElement
     el.style.transform = 'perspective(300px) rotateY(0deg) rotateX(0deg)'
-    el.style.boxShadow = ''
   })
   return () => {
     stopMove()
