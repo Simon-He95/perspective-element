@@ -37,10 +37,6 @@ const stop = perspectiveElementRotate('.a-img1', 0.5)
 ```
 
 
-## :warning: 注意
-- 图片元素需要设置pointer-events-none 和 absolute
-- 容器元素需要relative
-
 
 ## :tea: 
 [请我喝一杯咖啡](https://github.com/Simon-He95/sponsor)
