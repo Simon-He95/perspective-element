@@ -1,6 +1,6 @@
 {
   "name": "perspective-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@6.32.3",
   "description": "perspective-element",
   "author": "Simon He",
@@ -56,6 +56,7 @@
     "eslint": "^8.16.0",
     "eslint-plugin-n": "^15.2.1",
     "pkgroll": "^1.3.1",
+    "simon-js-tool": "^4.0.39",
     "typescript": "^4.7.2",
     "vite": "^3.0.2",
     "vitest": "^0.13.1"

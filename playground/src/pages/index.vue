@@ -1,53 +1,31 @@
 <script setup lang="ts">
-import { perspectiveElement } from '../../../src'
-const img1 = ref<HTMLImageElement>(null)
-const img2 = ref<HTMLImageElement>(null)
-const img3 = ref<HTMLImageElement>(null)
-const mousemove = (e: MouseEvent) => {
-  if (img1.value)
-    perspectiveElement(e, img1.value, 0.5)
-  if (img2.value)
-    perspectiveElement(e, img2.value, 0.3)
-  if (img3.value)
-    perspectiveElement(e, img3.value, 0.9)
-}
+import { perspectiveElementMove } from '../../../src'
+
+perspectiveElementMove('.parent', [
+  {
+    image: '.a-img1',
+    speed: 0.5,
+  },
+  {
+    image: '.a-img2',
+    speed: 0.3,
+  },
+  {
+    image: '.a-img3',
+    speed: 0.9,
+  },
+])
 </script>
 
 <template>
-  <div class="parent" relative overflow="hidden" @mousemove="mousemove">
-    <div
-      ref="img1"
-      class="a-img1"
-      absolute
-      left-0
-      top-0
-      w-full
-      pointer-events-none
-    >
+  <div class="parent" relative overflow="hidden">
+    <div class="a-img1" absolute left-0 top-0 w-full pointer-events-none>
       2
     </div>
-    <div
-      ref="img2"
-      class="a-img2"
-      absolute
-      left-50
-      top-0
-      z-2
-      w-100
-      pointer-events-none
-    >
+    <div class="a-img2" absolute left-50 top-0 z-2 w-100 pointer-events-none>
       4
     </div>
-    <div
-      ref="img3"
-      class="a-img3"
-      absolute
-      left-100
-      top-0
-      z-1
-      w-100
-      pointer-events-none
-    >
+    <div class="a-img3" absolute left-100 top-0 z-1 w-100 pointer-events-none>
       6
     </div>
   </div>

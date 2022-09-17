@@ -1,5 +1,6 @@
 ## perspective-element
-将图片元素加上跟随鼠标的视差效果
+- perspectiveElementMove: 将图片元素加上跟随鼠标的平移视差效果
+- perspectiveElementRotate: 将图片元素加上跟随鼠标的旋转视差效果
 
 ## :rocket: 安装 
 ```bash
@@ -7,32 +8,32 @@ npm i -g perspective-element
 ```
 
 
+## 特点
+- 事件会自动销毁，不需要手动销毁
+- 也可以手动销毁事件,返回一个销毁函数
 
 ## :eyes: 使用 
 ```bash
-import { perspectiveElement } from 'perspective-element'
-const img1 = ref<HTMLImageElement>(null)
-const img2 = ref<HTMLImageElement>(null)
-const img3 = ref<HTMLImageElement>(null)
-const mousemove = (e: MouseEvent) => {
-  if (img1.value)
-    perspectiveElement(e, img1.value, 0.5)
-}
+import { perspectiveElementMove, perspectiveElementRotate } from 'perspective-element'
+# 可以直接调用传入父容器和子容器的配置class和speed
+const stop = perspectiveElementMove(".parent", [
+  {
+    image: ".a-img1",
+    speed: 0.5,
+  },
+  {
+    image: ".a-img2",
+    speed: 0.3,
+  },
+  {
+    image: ".a-img3",
+    speed: 0.9,
+  },
+]);
 
-## template
-  <div class="parent" relative overflow="hidden" @mousemove="mousemove">
-    <img
-      ref="img1"
-      class="a-img1"
-      src="xxxx"
-      absolute
-      left-0
-      top-0
-      w-full
-      pointer-events-none
-    >
-    </div>
-  </div>
+## 传入imageClass和speed
+const stop = perspectiveElementRotate('.a-img1', 0.5)
+
 ```
 
 
@@ -48,3 +49,6 @@ const mousemove = (e: MouseEvent) => {
 
 ## :question: 问题
 [issues](https://github.com/Simon-He95/perspective-element/issues)
+
+## 依赖
+- [simon-js-tool](https://github.com/Simon-He95/simon-js-tool)
