@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { preload } from 'simon-js-tool'
+import { preload } from 'lazy-js-utils'
 import { perspectiveElementMove, perspectiveElementRotate } from '../../../src'
 preload(
   ['https://images.pexels.com/photos/1097491/pexels-photo-1097491.jpeg'],

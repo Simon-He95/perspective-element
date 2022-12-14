@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^8.1.1",
-    "simon-js-tool": "^4.1.0",
+    "lazy-js-utils": "^0.0.5",
     "vue": "^3.2.36"
   },
   "devDependencies": {

@@ -47,4 +47,4 @@ const stop = perspectiveElementRotate('.a-img1', 0.5)
 [issues](https://github.com/Simon-He95/perspective-element/issues)
 
 ## 依赖
-- [simon-js-tool](https://github.com/Simon-He95/simon-js-tool)
+- [lazy-js-utils](https://github.com/Simon-He95/lazy-js-utils)

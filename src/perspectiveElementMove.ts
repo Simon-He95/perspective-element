@@ -1,10 +1,10 @@
-import { addEventListener, isStr } from 'simon-js-tool'
+import { isStr, useEventListener } from 'lazy-js-utils'
 interface PerspectiveMoveOption {
   image: HTMLImageElement | string
   speed: number
 }
 export function perspectiveElementMove(container: string | HTMLElement, options: PerspectiveMoveOption[] = []): () => void {
-  return addEventListener(container, 'mousemove', (e) => {
+  return useEventListener(container, 'mousemove', (e) => {
     const el = (isStr(container) ? document.querySelector(container) : container) as HTMLElement
     const x = el.offsetLeft
     const y = el.offsetTop

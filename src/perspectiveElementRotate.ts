@@ -1,6 +1,6 @@
-import { addEventListener } from 'simon-js-tool'
+import { useEventListener } from 'lazy-js-utils'
 export function perspectiveElementRotate(container: HTMLImageElement | string, frequency = 0.5): () => void {
-  const stopMove = addEventListener(container, 'mousemove', (e) => {
+  const stopMove = useEventListener(container, 'mousemove', (e) => {
     const el = e.target as HTMLElement
     const left = el.getBoundingClientRect().left
     const top = el.getBoundingClientRect().top
@@ -15,7 +15,7 @@ export function perspectiveElementRotate(container: HTMLImageElement | string, f
     el.style.transform = `perspective(300px) rotateY(${X * frequency}deg) rotateX(${Y * frequency}deg)`
   })
 
-  const stopLeave = addEventListener(container, 'mouseleave', (e) => {
+  const stopLeave = useEventListener(container, 'mouseleave', (e) => {
     const el = e.target as HTMLElement
     el.style.transform = 'perspective(300px) rotateY(0deg) rotateX(0deg)'
   })
